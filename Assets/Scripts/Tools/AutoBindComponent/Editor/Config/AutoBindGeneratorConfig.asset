@@ -17,7 +17,7 @@ MonoBehaviour:
     fileExtension: .cs
     templatePath: CSharpBinding.txt
     outputPath: UI/Generated
-    namespaceName: QFramework.BrotatoCopy
+    namespaceName: Game.UI
     additionalNamespaces: []
   - name: Lua
     fileExtension: .lua
