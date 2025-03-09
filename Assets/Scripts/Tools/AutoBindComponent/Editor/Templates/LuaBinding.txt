@@ -1,0 +1,61 @@
+--[[ This code is auto-generated, don't modify it! ]]
+local CS = CS
+local UnityEngine = CS.UnityEngine
+local typeof = typeof
+
+---@class ${ClassName} : BaseUI
+---@field private binder AutoBindComponent
+local ${ClassName} = Class("${ClassName}", BaseUI)
+
+${TypeDefs}
+
+-- private fields
+local ${ClassName}_Fields = {
+${Fields}
+}
+
+-- create private fields for each instance
+setmetatable(${ClassName}, {
+    __call = function(cls, ...)
+        local instance = setmetatable({}, {__index = cls})
+        local fields = {}
+        for k, v in pairs(${ClassName}_Fields) do
+            fields[k] = v
+        end
+        instance.fields = fields
+        if instance.ctor then
+            instance:ctor(...)
+        end
+        return instance
+    end
+})
+
+---@private
+function ${ClassName}:BindComponents()
+    self.binder = self:GetComponent(typeof(CS.AutoBindComponent))
+    if not self.binder then
+        error(string.format("[%s] AutoBindComponent not found!", self.__cname))
+        return
+    end
+
+${BindingCode}
+end
+
+---@protected
+function ${ClassName}:OnBindingComplete()
+    -- Override this method to handle binding completion
+end
+
+function ${ClassName}:OnCreate()
+    self:BindComponents()
+    self:OnBindingComplete()
+end
+
+---@protected
+function ${ClassName}:OnDestroy()
+    -- clear references
+${ClearCode}
+    self.binder = nil
+end
+
+return ${ClassName} 

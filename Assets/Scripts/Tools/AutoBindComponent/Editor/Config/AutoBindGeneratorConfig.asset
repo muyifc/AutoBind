@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c252eb863f7bc43b0d3781c2fc530e, type: 3}
+  m_Name: AutoBindGeneratorConfig
+  m_EditorClassIdentifier: 
+  languageConfigs:
+  - name: C#
+    fileExtension: .cs
+    templatePath: CSharpBinding.txt
+    outputPath: UI/Generated
+    namespaceName: QFramework.BrotatoCopy
+    additionalNamespaces: []
+  - name: Lua
+    fileExtension: .lua
+    templatePath: LuaBinding.txt
+    outputPath: LuaScripts/UI/Generated
+    namespaceName: 
+    additionalNamespaces: []
+  namingConfig:
+    namingStrategyType: 0
+    fieldPrefix: _
+    propertyPrefix: 
+  baseOutputPath: Assets/Scripts
+  templateBasePath: Assets/Scripts/Tools/AutoBindComponent/Editor/Templates

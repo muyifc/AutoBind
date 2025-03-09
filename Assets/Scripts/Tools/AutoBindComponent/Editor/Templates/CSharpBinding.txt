@@ -1,0 +1,36 @@
+ // This code is auto-generated, don't modify it!
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
+using Tools.AutoBind;
+
+namespace ${Namespace}
+{
+    public partial class ${ClassName}
+    {
+        #region Auto Bind Fields
+${Fields}
+        #endregion
+
+        #region Binding Methods
+        private void BindComponents()
+        {
+            var binder = GetComponent<AutoBindComponent>();
+            if (binder == null)
+            {
+                Debug.LogError($"[{GetType().Name}] AutoBindComponent not found!");
+                return;
+            }
+
+${BindingCode}
+        }
+
+        private void UnBindComponents()
+        {
+${UnBindingCode}
+        }
+
+        #endregion
+    }
+}
